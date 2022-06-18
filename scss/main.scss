@@ -7,6 +7,7 @@ body {
     margin: 0;
     padding: 0;
     font-size: 16px;
+    position: relative;
 }
 
 .visually-hidden {
@@ -34,7 +35,7 @@ a {
 
 
 .container {
-    max-width: 1280px;
+    max-width: 1320px;
     margin: 0px;
     margin-right: auto;
     margin-left: auto; 
@@ -49,7 +50,8 @@ a {
 
 
 .header {
-    margin-bottom: 30px;
+    padding-top: 43px;
+    padding-bottom: 43px;
     
     
     &__container {
@@ -65,7 +67,6 @@ a {
         max-width: 236px;
         height: 26px;
         object-fit: contain;
-        margin-right: 500px;
     }
     
     &-right-side__list {
@@ -103,6 +104,21 @@ a {
         color: #333D4B;
         font-weight: bold;
     }
+    
+    &-burger__btn {
+        display: none;
+        align-items: center;
+        outline: none;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+    }
+    
+    &-burger-img-x { 
+        display: none;
+    }
+    
     
 }
 
@@ -231,7 +247,7 @@ a {
     
     &__container {
         position: relative;
-        max-width: 12800px;
+        max-width: 1280px;
         background: #2C343E;
         border-radius: 10px;
         padding-bottom: 320px;
@@ -267,7 +283,7 @@ a {
     &__list {
         position: absolute;
         bottom: -200px;
-        left: 30px;
+        left: 50px;
         display: flex;
         align-items: center;
     }
@@ -277,9 +293,10 @@ a {
         background: #0E8784;
         border-radius: 8px;
         margin-right: 30px;
+        min-height: 382px;
+        height: 100%;
         max-width: 350px;
         width: 100%;
-        min-height: auto;
     }
     
     &__item:last-child {
@@ -287,7 +304,7 @@ a {
     }
     
     &-list__img {
-        margin: 0px 0px 25px 80px;
+        margin: 0px 0px 56px 80px;
         width: 71px;
         height: 71px;
         object-fit: contain; 
@@ -296,11 +313,11 @@ a {
     &-list__heading {
         color: #FEFCF7;
         text-align: center;
+        margin-bottom: 24px;
     }
     
     &-list__tex {
-        color: #FEFCF7;
-        opacity: 0,7;
+        color: rgba(254, 252, 247, 0.7);
         text-align: center;
     }
 }
@@ -504,7 +521,6 @@ a {
 
 
 .about {
-    margin-top: 48px;
     
     &__container {
         background-image: url(./../images/about.jpg);
@@ -952,6 +968,8 @@ only screen and (                min-resolution: 2dppx) {
     }
     
     &__label {
+        max-height: 250px;
+        height: 100%;
         max-width: 228px;
         width: 100%;
         
@@ -977,6 +995,8 @@ only screen and (                min-resolution: 2dppx) {
     }
     
     &__input__wrapper {
+        max-height: 250px;
+        height: 100%;
         background: #F4F1EB;
         border-radius: 8px;
         padding: 32px 28px 80px 28px;
@@ -1034,6 +1054,18 @@ only screen and (                min-resolution: 2dppx) {
         }
         
         &__btn {
+            background: none;
+            border: none;
+            outline: none;
+            font-family: 'Fraunces 9pt';
+            font-weight: 900;
+            font-size: 18px;
+            line-height: 25px;
+            text-align: center;
+            color: #FEFCF7;
+            background: #0E8784;
+            border-radius: 6px;
+            padding: 15px 35px;
             margin-top: 35px;
         }
     }
@@ -1042,13 +1074,100 @@ only screen and (                min-resolution: 2dppx) {
 }
 
 
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 540px;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: #fff;
+
+    
+    &__heading {
+        font-family: 'Fraunces 9pt';
+        font-weight: 900;
+        font-size: 40px;
+        line-height: 48px;
+        color: #FFFFFF;
+        background-color: #333D4B;
+        border-radius: 8px 8px 0px 0px;
+        padding: 48px 56px 40px 56px;
+    }
+    
+    &__main-wrapper {
+        padding: 56px;
+    }
+    
+    &__icon-text {
+        max-width: 428px;
+        width: 100%;
+        font-family: 'Fraunces 9pt';
+        font-weight: 900;
+        font-size: 24px;
+        line-height: 40px;
+        color: #83888F;
+        margin-bottom: 7px;
+    }
+    
+    
+    &__code {
+        color: #0E8784;
+    }
+    
+    &__sub-text {
+        max-width: 428px;
+        width: 100%;
+        font-family: 'Barlow';
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 26px;
+        color: rgba(51, 61, 75, 0.8);
+        margin-bottom: 47px;
+    }
+    
+    &__wrapper {
+        display: flex;
+        gap: 19px;
+    }
+    
+    &__price {
+        font-family: 'Fraunces 9pt';
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 36px;
+        color: #333D4B;
+        margin-top: 10px;
+        
+    }
+    
+    &__btn {
+        background: none;
+        border: none;
+        outline: none;
+        font-family: 'Fraunces 9pt';
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 25px;
+        text-align: center;
+        color: #FEFCF7;
+        background: #0E8784;
+        border-radius: 6px;
+        padding: 15px 64px;
+    }
+}
+
+
+
+.modal--active {
+    display: block;
+
+}
 
 
 @media only screen and (max-width: 768px) {
-    
-    body {
-        margin-left: 60px;
-    }
     
     .header {
         &__container {
@@ -1081,6 +1200,9 @@ only screen and (                min-resolution: 2dppx) {
             max-width: 125px;
         } 
         
+        .header-burger__btn {
+            display: none;
+        }
         
     }
     
@@ -1174,10 +1296,13 @@ only screen and (                min-resolution: 2dppx) {
         
         &__item {
             justify-content: space-between;
-            max-width: none;
             margin-bottom: 24px;
             padding: 41px 48px 41px 70.5px;
             display: flex;
+            min-height: 0;
+            max-width: 573px;
+            width: 100%;
+            min-height: 180px;
         }
         
         &__item:last-child {
@@ -1186,7 +1311,10 @@ only screen and (                min-resolution: 2dppx) {
         }
         
         &-list__img {
+            max-width: 55px;
+            height: 56px;
             margin: 0;
+            margin-top: 20px;
         }
         
         &-list__heading {
@@ -1194,10 +1322,13 @@ only screen and (                min-resolution: 2dppx) {
         }
         
         &-list__tex {
-            color: #f0f5fd;
+            color: rgba(240, 245, 253, 0.7);
             text-align: left;
             max-width: 344px;
-            margin-bottom: 0;
+            width: 100%;
+            min-height: 50px;
+            font-size: 15px;
+            line-height: 25px;
         }
     }
     
@@ -1581,25 +1712,111 @@ only screen and (                min-resolution: 2dppx) {
     
 }
 
-@media only screen and (max-width: 675px) {
+@media only screen and (max-width: 600px) {
+    
     
     .header {
         
+        
+        .container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+        }
+        
         &__container {
-            margin-left: 100px;
+            position: relative;
+            max-width: 327px;
+            padding-left: 24px;
+            padding-right: 24px;
+            padding-bottom: 10px;
+            justify-content: space-between;
+        }
+        
+        &-left-side__img {
+            max-width: 163px;
+            height: 18px;
+            margin-right: 200px;
+        }
+        
+        &-right-side-list-wrapper {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            height: calc(100vh - 100%) ;
+            transform: scale(0);
+            transform-origin: top,;
+            padding-top: 40px;
+            background: linear-gradient(0deg, rgba(254, 252, 247, 0.504981) 0%, #FEFCF7 55.94%);
+            transition: all 1s ease;
         }
         
         &-right-side__list {
-            display: none;
+            flex-direction: column;
+            gap: 32px;
         }
+        
+        &-right-side__item {
+            text-align: center;
+            max-width: none;
+            
+            &:active {
+                transform: scale(0.9);
+            }
+        }
+        
+        &-right-side-item__link {
+            text-transform: capitalize;
+            font-weight: 900;
+            font-size: 24px;
+            line-height: 32px;
+            color: #333D4B;
+            
+            
+        }
+        
+        
+        
+        
+        .header-burger__btn {
+            display: block;
+        }
+        
+        &__container--active {
+            
+            .header {
+                .container {
+                    position: none;
+                }
+            }
+            
+            
+            .header-right-side-list-wrapper {
+                display: block;
+                transform: scale(1);
+                transition: all 1s ease;
+            }
+            
+            .header-burger-img {
+                display: none;
+            }
+            
+            .header-burger-img-x {
+                display: inline-block;
+            }
+        }
+        
     }
     
     .main {
         &__container {
             max-width: 327px;
-            padding: 100px 24px;
+            padding: 100px 44px;
             border-radius: 10px;
-            margin-left: 100px;
+            margin-left: 24px;
+            margin-right: 24px;
         }
         
         &__heading {
@@ -1628,7 +1845,8 @@ only screen and (                min-resolution: 2dppx) {
         
         
         &__container {
-            margin-left: 100px;
+            padding-left: 24px;
+            padding-right: 24px;
             max-width: 375px;
         }
         
@@ -1671,7 +1889,8 @@ only screen and (                min-resolution: 2dppx) {
         
         
         &__container {
-            margin-left: 150px;
+            margin-left: 24px;
+            margin-right: 24px;
             max-width: 327px;
             margin-bottom: 717px;
             padding: 64px 0px 661px 0px;
@@ -1695,6 +1914,12 @@ only screen and (                min-resolution: 2dppx) {
         &__item {
             padding: 72px 12px 51px 12px;
             flex-direction: column;
+            max-width: 279px;
+            width: 100%;
+            min-height: 382px;
+            height: 100%;
+            margin-right: 0;
+            padding-right: 0;
         }
         
         
@@ -1706,6 +1931,7 @@ only screen and (                min-resolution: 2dppx) {
         &-list__heading {
             margin-bottom: 24px;
             text-align: center;
+            margin-right: 10px;
         }
         
         &-list__tex {
@@ -1720,7 +1946,8 @@ only screen and (                min-resolution: 2dppx) {
         
         
         &__container {
-            margin-left: 100px;
+            padding-left: 24px;
+            padding-right: 24px;
             max-width: 327px;
             display: flex;
             flex-direction: column;
@@ -1775,9 +2002,12 @@ only screen and (                min-resolution: 2dppx) {
         }
     }
     
+    
+    
     .footer {
         &__container {
-            margin-left: 100px;
+            margin-left: 24px;
+            margin-right: 24px;
             max-width: 327px;
             padding: 55px 191px 55px;
             flex-direction: column;
@@ -1816,7 +2046,8 @@ only screen and (                min-resolution: 2dppx) {
         
         &__container {
             margin: 0;
-            margin-left: 50px;
+            margin-left: 24px;
+            margin-right: 24px;
             max-width: 357px;
             width: 100%;
             max-height: 400px;
@@ -1850,7 +2081,8 @@ only screen and (                min-resolution: 2dppx) {
         &__container {
             max-width: 327px;
             flex-direction: column;
-            margin-left: 50px;
+            padding-left: 24px;
+            padding-right: 24px;
         }
         
         
@@ -1902,7 +2134,8 @@ only screen and (                min-resolution: 2dppx) {
             max-width: 327px;
             border-radius: 20px;
             padding: 142px 24px 61px 24px;
-            margin-left: 100px;
+            margin-left: 24px;
+            margin-right: 24px;
             
         }
         
@@ -1944,7 +2177,8 @@ only screen and (                min-resolution: 2dppx) {
         
         &__container {
             max-width: 327px;
-            margin-left: 100px;
+            padding-left: 24px;
+            padding-right: 24px;
         }
         
         &__list {
@@ -1956,7 +2190,8 @@ only screen and (                min-resolution: 2dppx) {
             height: 49px;
             object-fit: cover;
             margin-bottom: 45px;
-            margin-left: 100px;
+            padding-left: 24px;
+            padding-right: 24px;
         }
         &-item__heading {
             font-size: 28px;
@@ -1979,7 +2214,8 @@ only screen and (                min-resolution: 2dppx) {
         margin-bottom: 130px;
         
         &__container {
-            margin-left: 50px;
+            margin-left: 24px;
+            margin-right: 24px;
             max-width: 327px;
             width: 100%;
             padding: 110px 24px 136px 0px;
@@ -2005,15 +2241,16 @@ only screen and (                min-resolution: 2dppx) {
     
     
     .background {
-        padding-left: 0px;
-        background: #2C343E;
-        border-radius: 10px;
         max-width: 325px;
         width: 110%;
-        margin-left: 70px;
+        margin-left: 24px;
+        margin-right: 24px;
         
         
         &__container {
+            
+            border-radius: 10px;
+            background: #2C343E;
             padding: 80px 24px;
             max-width: 327px;
             width: 100%;
@@ -2064,7 +2301,8 @@ only screen and (                min-resolution: 2dppx) {
             margin-top: 100px;
             max-width: 327px;
             width: 100%;
-            margin-left: 50px;
+            padding-left: 24px;
+            padding-right: 24px;
         } 
         
         &-r__top {
@@ -2079,15 +2317,16 @@ only screen and (                min-resolution: 2dppx) {
             width: 100%;
             font-size: 24px;
             line-height: 28px;
-            margin-right: -29px;
+            margin-left: 29px;
         }
+        
         
         &-r-item {
             max-width: 328px;
             width: 100%;
             min-height: 520px;
         }
-
+        
         &-r__bottom {
             flex-direction: column;
         }
@@ -2095,12 +2334,14 @@ only screen and (                min-resolution: 2dppx) {
         &__label {
             max-width: 328px;
             width: 100%;
-            margin-bottom: 16px;
+            gap: 16px;
         }
-
+        
         &__input__wrapper {
             padding: 25px;
             margin-bottom: 8px;
+            max-height: 140px;
+            height: 100%;
         }
         
         &-wrapper__heading {
@@ -2120,9 +2361,10 @@ only screen and (                min-resolution: 2dppx) {
         
         .result {
             padding: 32px 25px;
-            margin-left: 20px;
+            margin-left: 24px;
+            margin-right: 24px;
             border-radius: 10px;
-
+            
             &-icon-text {
                 min-width: 279px;
                 width: 100%;

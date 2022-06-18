@@ -7,14 +7,14 @@
     <link rel="stylesheet" href="./css/main.css">
     <title>Coffeee</title>
 </head>
-<body>
+<body class="wrapper">
     
     <h1 class="visually-hidden">
         COFFEE-MAGAZIN
     </h1>
     
     <header class="header">
-        <div class="container">
+        <div class="container"> 
             <div class="header__container">
                 <img src="./images/site-logo.svg" alt="site-logo" class="header-left-side__img" width="236" height="26">
                 
@@ -22,14 +22,14 @@
                     
                     <ul class="header-right-side__list">
                         <li class="header-right-side__item">
-                            <a href="about.html" class="header-right-side-item__link">
-                                HOME
+                            <a href="about.html" class="header-right-side-item__link header-active__link">
+                                Home
                             </a>
                         </li>
                         
                         <li class="header-right-side__item">
-                            <a href="#" class="header-right-side-item__link header-active__link">
-                                ABOUT US
+                            <a href="#" class="header-right-side-item__link">
+                                About us
                             </a>
                         </li>
                         
@@ -41,6 +41,11 @@
                         
                     </ul>
                 </nav>
+
+                <button class="header-burger__btn">
+                    <img class="header-burger-img" src="./images/burger.svg" alt="burger-open" width="16" height="15">
+                    <img class="header-burger-img-x" src="./images/burger-x.svg" alt="burger-close" width="13" height="13">
+                </button>
                 
             </div>
         </div>
@@ -174,8 +179,7 @@
                                 </div>
                                 
                                 <div class="often-r__bottom">
-                                    <la
-                                    bel class="often__label">
+                                    <label class="often__label">
                                         <input class="often__input" type="radio" name="coffe-how" value="capsule">
                                         
                                         <div class="often__input__wrapper">
@@ -447,7 +451,7 @@
                            
                         </div>
 
-                        <button type="button" class="main__btn result__btn">
+                        <button type="button" class="result__btn">
                             Create your plan
                         </button>
                         
@@ -472,7 +476,7 @@
                     
                         <ul class="footer-left-side__list">
                             <li class="footer-left-side__item">
-                                <a href="#" class="header-right-side-item__link header-active__link footer-left-side__link">
+                                <a href="about.html" class="header-right-side-item__link header-active__link footer-left-side__link">
                                     HOME
                                 </a>
                             </li>
@@ -518,6 +522,36 @@
             </div>
         </div>
     </footer>
+
+    <div class="modal">
+        <h3 class="modal__heading">
+            Order Summary
+        </h3>
+
+        <div class="modal__main-wrapper">
+            
+        <p class="modal__icon-text">
+            “I drink my coffee as <span class="modal__code">Filter</span>, with a <span class="modal__code">Decaf</span> type of bean. <span class="modal__code">250g</span> ground ala <span class="modal__code">Cafetiére</span>, sent to me <span class="modal__code">Every Week</span>.”
+        </p>
+
+        <p class="modal__sub-text">
+            Is this correct? You can proceed to checkout or go back to plan selection if something is off. Subscription discount codes can also be redeemed at the checkout. 
+        </p>
+
+        <div class="modal__wrapper">
+            <p class="modal__price">
+                $14.00/ mo
+            </p>
+
+            <button class="modal__btn">
+                Checkout
+            </button>
+        </div>
+        </div>
+
+    </div>
     
+    <script src="./js/main.js"></script>
+
 </body>
 </html>
